@@ -2,19 +2,18 @@
  * Styles for the add-observation.html page 
  */
 
+.required {
+  color: red;
+}
 
- .required{
-     color: red;
- }
+#obsv_pName {
+  width: 60%;
+}
 
- #obsv_pName{
-     width: 60%;
- }
+#obsv_pEmail {
+  width: 60%;
+}
 
- #obsv_pEmail{
-     width: 60%;
- }
-
- #obsv_photo{
-     width: 40%;
- }
+#obsv_photo {
+  width: 40%;
+}
