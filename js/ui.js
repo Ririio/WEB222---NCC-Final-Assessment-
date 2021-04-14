@@ -117,10 +117,10 @@ function toggleLoading(isLoading) {
   // times (i.e., we need to wait until the loading finishes).  We decide what to
   // do based on the value of the isLoading argument.
 
-  iconVal = document.getElementById("search_submit");
+  let iconVal = document.getElementById("submit");
 
   if (isLoading) {
-    iconVal.setAttribute("disabled", "disabled");
+    iconVal.setAttribute("disabled", true);
     iconVal.innerHTML = "<i id='fas_fa_hourglass-half' class='fas fa-hourglass-half'>&nbsp;Loading…</i>";
   } else {
     iconVal.removeAttribute("disabled");
