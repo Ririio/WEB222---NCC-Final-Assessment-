@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
 
   <!-- Our site's styles -->
   <link rel="stylesheet" href="css/common.css" />
@@ -79,8 +79,9 @@
       <!-- Search Form -->
       <form id="search">
         <!-- TODO - create the search form -->
-        <input id="search_query" name="search_query" type="text" placeholder="1750 Finch Ave E, North York, ON, CA">
-        <button id="search_submit" name="search">Search</button>
+        <input id="search_query" name="search_query" type="text" placeholder="1750 Finch Ave E, North York, ON, CA" />
+        <button id="search_submit" name="search_submit" type="submit"><i id='fas_fa_search' class='fas fa-search'>
+            &nbsp;Search</i></button>
       </form>
       <!-- Leaflet Map will get drawn within this div element -->
       <div id="map" class="loading">
@@ -100,14 +101,19 @@
       <div id="legend">
         <span><i class="fas fa-leaf" title="Native"></i> Native</span>
         <span><i class="fas fa-frog" title="Introduced"></i> Introduced</span>
-        <span><i class="fas fa-radiation-alt" title="Threatened"></i> Threatened</span>
-        <span><i class="fas fa-skull-crossbones" title="Endangered"></i> Endangered</span>
+        <span><i class="fas fa-radiation-alt" title="Threatened"></i>
+          Threatened</span>
+        <span><i class="fas fa-skull-crossbones" title="Endangered"></i>
+          Endangered</span>
       </div>
       <div id="observation-cards"></div>
 
       <div>
         <h2>New Observations</h2>
-        <p>Found a new observation? <a href="add-observation.html">Add it to the list</a> and share it with the world.
+        <p>
+          Found a new observation?
+          <a href="add-observation.html">Add it to the list</a> and share it
+          with the world.
         </p>
       </div>
     </section>
