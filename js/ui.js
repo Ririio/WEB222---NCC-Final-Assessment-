@@ -23,7 +23,7 @@ function createAnchor(href, innerContent) {
 }
 
 function cardImg(url) {
-  url = url.replace('square', 'medium');
+  url = url.replace("square", "medium");
   const div = document.createElement("div");
   div.className = "card-img";
   div.style = `background-image: url(${url})`;
@@ -31,7 +31,7 @@ function cardImg(url) {
   return div;
 }
 
-function cardBody(name, date, uri, wikipediaUrl,) {
+function cardBody(name, date, uri, wikipediaUrl) {
   const body = document.createElement("div");
   body.className = "card-body";
 
@@ -55,7 +55,7 @@ function cardIcons(isNative, isIntroduced, isThreatened, isEndangered) {
   function cardIcon(classes, title) {
     const icon = document.createElement("i");
     icon.className = classes;
-    icon.title = title
+    icon.title = title;
     return icon;
   }
 
@@ -84,7 +84,16 @@ function cardIcons(isNative, isIntroduced, isThreatened, isEndangered) {
 
 function buildCardForObservation(observation) {
   const {
-    id, name, photoUrl, date, uri, wikipediaUrl, isNative, isEndangered, isIntroduced, isThreatened
+    id,
+    name,
+    photoUrl,
+    date,
+    uri,
+    wikipediaUrl,
+    isNative,
+    isEndangered,
+    isIntroduced,
+    isThreatened,
   } = observation;
 
   const card = document.createElement("div");
@@ -93,13 +102,15 @@ function buildCardForObservation(observation) {
 
   card.appendChild(cardImg(photoUrl));
   card.appendChild(cardBody(name, date, uri, wikipediaUrl));
-  card.appendChild(cardIcons(isNative, isIntroduced, isThreatened, isEndangered));
+  card.appendChild(
+    cardIcons(isNative, isIntroduced, isThreatened, isEndangered)
+  );
 
   return card;
 }
 
 function toggleLoading(isLoading) {
-  // TODO - toggle the state of the Search button. When we click 'Search' we need to 
+  // TODO - toggle the state of the Search button. When we click 'Search' we need to
   // indicate to the user that we're doing something (i.e., that we're Loading...).
   // We also need to change the icon from a search magnifying glass to an hourglass.
   // Finally, we need to disable the button, so the user doesn't click it multiple
@@ -110,11 +121,9 @@ function toggleLoading(isLoading) {
 
   if (isLoading) {
     iconVal.setAttribute("disabled", "disabled");
-    iconVal.innerHTML = "<i class='fas fa-hourglass-half'> Loading…</i>";
-  }
-  else {
+    iconVal.innerHTML = "<i id='fas_fa_hourglass-half' class='fas fa-hourglass-half'>&nbsp;Loading…</i>";
+  } else {
     iconVal.removeAttribute("disabled");
-    iconVal.innerHTML = "<i class='fas fa-search'> Search</i>";
+    iconVal.innerHTML = "<i id='fas_fa_search' class='fas fa-search'>&nbsp;Search</i>";
   }
-
 }
