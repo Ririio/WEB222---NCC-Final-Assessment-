@@ -1,195 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Web Wildlife Walk v3.0</title>
 
-    <meta name="description" content="WEB222 Wildlife Assignment" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <title>Web Wildlife Walk v3.0</title>
 
-    <link
-      href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDGCmTAzQpkwMZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkwMJqZMDGKmTAzspkwM/6ZMDPmmTAwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAxMpkwMz6ZMDPimTAz6pkwM/6ZMDP+mTAz/pkwMHKZMDBymTAwUAAAAAAAAAAAAAAAAAAAAAAAAAACmTAyQpkwM/aZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/KZMDDSmTAzlpkwM/6ZMDL2mTAwLAAAAAAAAAAAAAAAApkwMiKZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/6ZMDNumTAwhpkwM/qZMDP+mTAz/pkwMigAAAAAAAAAAAAAAAKZMDASmTAyOpkwM/6ZMDP+mTAz/pkwM/6ZMDP+mTAyLpkwMAaZMDKSmTAz/pkwM/6ZMDLYAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDDSmTAyvpkwM4aZMDOymTAzdpkwMQKZMDAOmTAwJpkwMPqZMDHqmTAwgAAAAAAAAAAAAAAAAAAAAAKZMDEemTAzJpkwMUKZMDBWmTAwjpkwMFgAAAACmTAxjpkwM0KZMDJCmTAwHAAAAAAAAAAAAAAAAAAAAAAAAAACmTAympkwM/6ZMDPOmTAwKpkwMI6ZMDDYAAAAApkwMw6ZMDP+mTAz/pkwMuaZMDAIAAAAAAAAAAAAAAAAAAAAApkwM1KZMDP+mTAz/pkwMHaZMDJemTAz2pkwMiqZMDFymTAz/pkwM/6ZMDP+mTAxQAAAAAAAAAAAAAAAAAAAAAKZMDKmmTAz/pkwM3KZMDBOmTAzFpkwM/6ZMDP2mTAwnpkwMn6ZMDP6mTAz/pkwMbwAAAAAAAAAAAAAAAAAAAACmTAwepkwMyqZMDH6mTAwCpkwMtaZMDP+mTAz/pkwMgwAAAACmTAwmpkwMUqZMDAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDE2mTAz/pkwM/6ZMDG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAwBpkwMeKZMDLGmTAwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP9/AAD+PwAA8D8AAMAjAADAIQAA4CEAAPh/AAD35wAA48MAAOIjAADiIwAA9h8AAP8/AAD/vwAA//8AAA=="
-      rel="icon"
-      type="image/x-icon"
-    />
+  <meta name="description" content="WEB222 Wildlife Assignment" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
-    />
+  <link
+    href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDGCmTAzQpkwMZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkwMJqZMDGKmTAzspkwM/6ZMDPmmTAwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAxMpkwMz6ZMDPimTAz6pkwM/6ZMDP+mTAz/pkwMHKZMDBymTAwUAAAAAAAAAAAAAAAAAAAAAAAAAACmTAyQpkwM/aZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/KZMDDSmTAzlpkwM/6ZMDL2mTAwLAAAAAAAAAAAAAAAApkwMiKZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/6ZMDNumTAwhpkwM/qZMDP+mTAz/pkwMigAAAAAAAAAAAAAAAKZMDASmTAyOpkwM/6ZMDP+mTAz/pkwM/6ZMDP+mTAyLpkwMAaZMDKSmTAz/pkwM/6ZMDLYAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDDSmTAyvpkwM4aZMDOymTAzdpkwMQKZMDAOmTAwJpkwMPqZMDHqmTAwgAAAAAAAAAAAAAAAAAAAAAKZMDEemTAzJpkwMUKZMDBWmTAwjpkwMFgAAAACmTAxjpkwM0KZMDJCmTAwHAAAAAAAAAAAAAAAAAAAAAAAAAACmTAympkwM/6ZMDPOmTAwKpkwMI6ZMDDYAAAAApkwMw6ZMDP+mTAz/pkwMuaZMDAIAAAAAAAAAAAAAAAAAAAAApkwM1KZMDP+mTAz/pkwMHaZMDJemTAz2pkwMiqZMDFymTAz/pkwM/6ZMDP+mTAxQAAAAAAAAAAAAAAAAAAAAAKZMDKmmTAz/pkwM3KZMDBOmTAzFpkwM/6ZMDP2mTAwnpkwMn6ZMDP6mTAz/pkwMbwAAAAAAAAAAAAAAAAAAAACmTAwepkwMyqZMDH6mTAwCpkwMtaZMDP+mTAz/pkwMgwAAAACmTAwmpkwMUqZMDAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDE2mTAz/pkwM/6ZMDG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAwBpkwMeKZMDLGmTAwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP9/AAD+PwAA8D8AAMAjAADAIQAA4CEAAPh/AAD35wAA48MAAOIjAADiIwAA9h8AAP8/AAD/vwAA//8AAA=="
+    rel="icon" type="image/x-icon" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css"
-    />
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
-      crossorigin="anonymous"
-    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css" />
 
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/form.css" />
-  </head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
 
-  <body>
-    <header>
-      <nav>
-        <a href="/"><i class="fas fa-home"></i> Home</a>
-        <a href="add-observation.html"
-          ><i class="fas fa-plus"></i> Add Observation</a
-        >
-      </nav>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/form.css" />
+</head>
 
-      <h1>Web Wildlife Walk v3.0</h1>
+<body>
+  <header>
+    <nav>
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="add-observation.html"><i class="fas fa-plus"></i> Add Observation</a>
+    </nav>
 
-      <h2>Adding New Observations</h2>
-      <p>
-        The data used on this web site is generated by volunteers like you who
-        love nature and want to share it. You can improve the database of
-        wildlife information simply by adding your own observations!
-      </p>
-    </header>
+    <h1>Web Wildlife Walk v3.0</h1>
 
-    <main>
-      <section>
-        <h2>Observation Details</h2>
-        <p><span class="required">*</span> Required field</p>
-        <form
-          class="observation_form"
-          method="POST"
-          action="https://formspree.io/f/xzbybopk"
-        >
-          <fieldset>
-            <legend>Observation</legend>
-            <label id="obsv_label_species_guess"
-              >Species Guess<span class="required">*</span></label
-            >
-            <input
-              id="obsv_species_guess"
-              name="species_guess"
-              type="text"
-              maxlength="200"
-              placeholder="Great Horned Owl"
-            />
+    <h2>Adding New Observations</h2>
+    <p>
+      The data used on this web site is generated by volunteers like you who
+      love nature and want to share it. You can improve the database of
+      wildlife information simply by adding your own observations!
+    </p>
+  </header>
 
-            <label id="obsv_label_description"
-              >Description<span class="required">*</span></label
-            >
-            <input
-              id="obsv_description"
-              name="description"
-              type="text"
-              placeholder="Roosting on fence post at the edge of a field"
-            />
+  <main>
+    <section>
+      <h2>Observation Details</h2>
+      <p><span class="required">*</span> Required field</p>
+      <form class="observation_form" method="POST" action="https://formspree.io/f/xzbybopk">
+        <fieldset>
+          <legend>Observation</legend>
+          <label id="obsv_label_species_guess">Species Guess<span class="required">*</span></label>
+          <input id="obsv_species_guess" name="species_guess" type="text" maxlength="200"
+            placeholder="Great Horned Owl" />
 
-            <label id="obsv_label_date"
-              >Date Observed<span class="required">*</span></label
-            >
-            <input id="obsv_date" name="date" type="date" />
+          <label id="obsv_label_description">Description<span class="required">*</span></label>
+          <input id="obsv_description" name="description" type="text"
+            placeholder="Roosting on fence post at the edge of a field" />
 
-            <label id="obsv_label_notes"
-              >Notes<span class="required">*</span></label
-            >
-            <textarea
-              id="obsv_notes"
-              name="notes"
-              placeholder="Notes about observation..."
-            ></textarea>
-          </fieldset>
+          <label id="obsv_label_date">Date Observed<span class="required">*</span></label>
+          <input id="obsv_date" name="date" type="date" />
 
-          <fieldset>
-            <legend>Location</legend>
+          <label id="obsv_label_notes">Notes<span class="required">*</span></label>
+          <textarea id="obsv_notes" name="notes" placeholder="Notes about observation..."></textarea>
+        </fieldset>
 
-            <div>
-              <label id="obsv_label_latitude"
-                >Latitude<span class="required">*</span></label
-              >
-              <input
-                id="obsv_latitude"
-                name="latitude"
-                type="text"
-                placeholder="43.7955"
-              />
-            </div>
+        <fieldset>
+          <legend>Location</legend>
 
-            <div>
-              <label id="obsv_label_longitude"
-                >Longitude<span class="required">*</span></label
-              >
-              <input
-                id="obsv_longitude"
-                name="longitude"
-                type="text"
-                placeholder="-79.3496"
-              />
-            </div>
+          <div>
+            <label id="obsv_label_latitude">Latitude<span class="required">*</span></label>
+            <input id="obsv_latitude" name="latitude" type="text" placeholder="43.7955" />
+          </div>
 
-            <input type="checkbox" name="obsv_shareLocation" /><span>
-              Share location information (i.e., it's ok to make this
-              public)</span
-            >
-          </fieldset>
+          <div>
+            <label id="obsv_label_longitude">Longitude<span class="required">*</span></label>
+            <input id="obsv_longitude" name="longitude" type="text" placeholder="-79.3496" />
+          </div>
 
-          <fieldset>
-            <legend>Photo</legend>
+          <input type="checkbox" name="obsv_shareLocation" /><span>
+            Share location information (i.e., it's ok to make this
+            public)</span>
+        </fieldset>
 
-            <label id="obsv_label_pName"
-              >Photographer Name<span class="required">*</span></label
-            >
-            <input
-              id="obsv_pName"
-              name="Photographer_Name"
-              type="text"
-              maxlength="100"
-              placeholder="Karen Shu"
-            />
+        <fieldset>
+          <legend>Photo</legend>
 
-            <label id="obsv_label_pEmail"
-              >Photographer Email<span class="required">*</span></label
-            >
-            <input
-              id="obsv_pEmail"
-              name="Photographer_Email"
-              type="email"
-              placeholder="kshu@photos.com"
-            />
+          <label id="obsv_label_pName">Photographer Name<span class="required">*</span></label>
+          <input id="obsv_pName" name="Photographer_Name" type="text" maxlength="100" placeholder="Karen Shu" />
 
-            <label id="obsv_label_photo"
-              >Photo<span class="required">*</span></label
-            >
-            <input id="obsv_photo" name="Photo" type="file" />
+          <label id="obsv_label_pEmail">Photographer Email<span class="required">*</span></label>
+          <input id="obsv_pEmail" name="Photographer_Email" type="email" placeholder="kshu@photos.com" />
 
-            <label id="obsv_label_license"
-              >License (<a href="https://creativecommons.org/choose/"
-                >help on choosing a license</a
-              >)</label
-            >
-            <select id="obsv_license">
-              <option>Creative Commons Attribution License</option>
-              <option>
-                CC-BY-NC Creative Commons Attribution-NonCommercial License
-              </option>
-              <option>
-                CC-BY-SA Creative Commons Attribution-ShareAlike License
-              </option>
-              <option>
-                CC-BY-ND Creative Commons Attribution-NoDerivs License
-              </option>
-              <option>
-                Creative Commons Attribution-NonCommercial-ShareAlike License
-              </option>
-              <option>
-                Creative Commons Attribution-NonCommercial-NoDerivs License
-              </option>
-            </select>
-          </fieldset>
+          <label id="obsv_label_photo">Photo<span class="required">*</span></label>
+          <input id="obsv_photo" name="Photo" type="file" />
 
-          <input class="obsv_submit" type="submit" value="Submit" />
-        </form>
-      </section>
-    </main>
-    <script src="js/validate.js"></script>
-  </body>
+          <label id="obsv_label_license">License (<a href="https://creativecommons.org/choose/">help on choosing a
+              license</a>)</label>
+          <select id="obsv_license" name=License>
+            <option value="CC-BY">Creative Commons Attribution License</option>
+            <option value="CC-BY-NC">
+              Creative Commons Attribution-NonCommercial License
+            </option>
+            <option value="CC-BY-SA">
+              Creative Commons Attribution-ShareAlike License
+            </option>
+            <option value="CC-BY-ND">
+              Creative Commons Attribution-NoDerivs License
+            </option>
+            <option value="CC-BY-NC-SA">
+              Creative Commons Attribution-NonCommercial-ShareAlike License
+            </option>
+            <option value="CC-BY-NC-ND">
+              Creative Commons Attribution-NonCommercial-NoDerivs License
+            </option>
+          </select>
+        </fieldset>
+
+        <input class="obsv_submit" type="submit" value="Submit" />
+      </form>
+    </section>
+  </main>
+  <script src="js/validate.js"></script>
+</body>
+
 </html>
