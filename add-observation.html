@@ -47,15 +47,15 @@
         <fieldset>
           <legend>Observation</legend>
           <label id="obsv_label_species_guess">Species Guess<span class="required">*</span></label>
-          <input id="obsv_species_guess" name="species_guess" type="text" maxlength="200"
-            placeholder="Great Horned Owl" />
+          <input id="obsv_species_guess" name="species_guess" type="text" maxlength="200" placeholder="Great Horned Owl"
+            required />
 
           <label id="obsv_label_description">Description<span class="required">*</span></label>
           <input id="obsv_description" name="description" type="text"
-            placeholder="Roosting on fence post at the edge of a field" />
+            placeholder="Roosting on fence post at the edge of a field" required />
 
           <label id="obsv_label_date">Date Observed<span class="required">*</span></label>
-          <input id="obsv_date" name="date" type="date" />
+          <input id="obsv_date" name="date" type="date" required />
 
           <label id="obsv_label_notes">Notes<span class="required">*</span></label>
           <textarea id="obsv_notes" name="notes" placeholder="Notes about observation..."></textarea>
@@ -66,15 +66,15 @@
 
           <div>
             <label id="obsv_label_latitude">Latitude<span class="required">*</span></label>
-            <input id="obsv_latitude" name="latitude" type="text" placeholder="43.7955" />
+            <input id="obsv_latitude" name="latitude" type="text" placeholder="43.7955" required />
           </div>
 
           <div>
             <label id="obsv_label_longitude">Longitude<span class="required">*</span></label>
-            <input id="obsv_longitude" name="longitude" type="text" placeholder="-79.3496" />
+            <input id="obsv_longitude" name="longitude" type="text" placeholder="-79.3496" required />
           </div>
 
-          <input type="checkbox" name="obsv_shareLocation" /><span>
+          <input type="checkbox" name="obsv_shareLocation" required /><span>
             Share location information (i.e., it's ok to make this
             public)</span>
         </fieldset>
@@ -83,13 +83,14 @@
           <legend>Photo</legend>
 
           <label id="obsv_label_pName">Photographer Name<span class="required">*</span></label>
-          <input id="obsv_pName" name="Photographer_Name" type="text" maxlength="100" placeholder="Karen Shu" />
+          <input id="obsv_pName" name="Photographer_Name" type="text" maxlength="100" placeholder="Karen Shu"
+            required />
 
           <label id="obsv_label_pEmail">Photographer Email<span class="required">*</span></label>
-          <input id="obsv_pEmail" name="Photographer_Email" type="email" placeholder="kshu@photos.com" />
+          <input id="obsv_pEmail" name="Photographer_Email" type="email" placeholder="kshu@photos.com" required />
 
           <label id="obsv_label_photo">Photo<span class="required">*</span></label>
-          <input id="obsv_photo" name="Photo" type="file" />
+          <input id="obsv_photo" name="Photo" type="file" required />
 
           <label id="obsv_label_license">License (<a href="https://creativecommons.org/choose/">help on choosing a
               license</a>)</label>
